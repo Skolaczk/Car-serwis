@@ -4,7 +4,8 @@
     "rules": {
       "prettier/prettier": ["warn", {
         "singleQuote": true,
-        "endOfLine": "auto"
+        "endOfLine": "auto",
+        "tabWidth": 2
       }]
     },
     "env": {

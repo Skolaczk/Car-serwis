@@ -5,9 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>car-serwis</title>
     <link rel="stylesheet" href="../dist/css/main.css">
-    <script src="js/app.js" defer></script>
 </head>
 <body>
-    <h1>Testowy projekt</h1>
+    <header class="header">
+        <nav class="header__navigation">
+            <div class="header__logo">
+                <img src="images/logo.png" alt="logo"/>
+                <h1><span>car</span>serwis</h1>
+            </div>
+            <div class="header__menu-off header__menu">
+                <ul class="header__list">
+                    <a class="header__link" href="#">
+                        <li>HOME</li>
+                    </a>
+                    <a class="header__link" href="#">
+                        <li>O NAS</li>
+                    </a>
+                    <a class="header__link" href="#">
+                        <li>USŁUGI</li>
+                    </a>
+                    <a class="header__link" href="#">
+                        <li>KONTAKT</li>
+                    </a>
+                </ul>
+            </div>
+            <button class="header__hamburger" name="hamburger">
+                <span class="header__line"></span>
+            </button>
+        </nav>
+        <div class="header__hero">
+            <h1 class="header__title">Witamy na naszej stronie</h1>
+            <p class="header__paragraph">Na tej stronie dowiesz się wszytkiego o warsztacie samochodowym Car-serwis w Koprzywnicy. Znajdziesz tutaj dokładną lokalizacje warsztatu, facebook, jak powstała firma oraz co najważniejsze jakie usługi oferujemy dla naszych klientów.</p>
+            <a href="#">
+                <button class="header__button" name="button">Czytaj więcej</button>
+            </a>
+        </div>
+    </header>
+    <script src="js/app.js" defer></script>
 </body>
 </html>
