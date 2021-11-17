@@ -1,0 +1,46 @@
+{
+  "name": "test-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass src/scss/main.scss dist/css/main.css --style=compressed",
+    "autoprefixer": "postcss dist/css/*.css --use autoprefixer -r",
+    "lint": "eslint src/js",
+    "prettier": "prettier --write",
+    "uglify": "uglifyjs src/js/*.js --mangle --warn --output dist/js/app.js && uglifyjs src/js/*.js --mangle --warn --compress --output dist/js/app.min.js",
+    "build:css": "npm run sass && npm run autoprefixer",
+    "build:images": "imagesmin \"src/images/* --out-dir=dist/images\"",
+    "build:js": "npm run lint && npm run uglify",
+    "watch:css": "onchange \"src/scss/**/*.scss\" -- npm run build:css",
+    "watch:images": "onchange \"src/images/* -- npm run build:images\"",
+    "watch:js": "onchange \"src/js/**/*.js\" -- npm run build:js",
+    "serve": "browser-sync start --server dist --files \"dist/*.html, dist/css/*.css, dist/js/*.js\"",
+    "start": "npm-run-all --parallel watch:css watch:images watch:js serve"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.0.2",
+    "browser-sync": "^2.26.13",
+    "eslint": "^7.14.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "imagemin-cli": "^6.0.0",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "postcss": "^8.1.9",
+    "postcss-cli": "^8.3.0",
+    "prettier": "^2.4.1",
+    "sass": "^1.29.0",
+    "uglify-js": "^3.12.0"
+  }
+}

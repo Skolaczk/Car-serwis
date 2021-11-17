@@ -1,0 +1,15 @@
+{
+    "extends": ["plugin:prettier/recommended", "prettier"],
+    "plugins": ["prettier"],
+    "rules": {
+      "prettier/prettier": ["warn", {
+        "singleQuote": true,
+        "endOfLine": "auto"
+      }]
+    },
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+    }
+  }
