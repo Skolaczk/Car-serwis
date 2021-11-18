@@ -181,6 +181,33 @@
         margin-top: 10px;
     }
 }
+
+.services{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    max-width: 1200px;
+    background-color: $dark-gray;
+    margin: 50px 0;
+}
+
+.services__icon{
+    text-align: center;
+    color: $white;
+    padding: 15px;
+
+    h2{
+        margin: 5px 0;
+    }
+
+    img{
+        height: 120px;
+    }
+}
+
+.services__icon:nth-child(even){
+    background-color: $gray;
+}
+
 @keyframes toggleMenu {
     from{
         opacity: 0;
