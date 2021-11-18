@@ -109,6 +109,43 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dicta earum aliquam</p>
         </div>
     </section>
+    <section class="contact" id="contact">
+        <div class="contact__icons">
+            <div class="contact__icon">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Car-serwis</p>
+                <p>ul. Sportowa 16</p>
+                <p>27-660 Koprzywnica</p>
+            </div>
+            <div class="contact__icon">
+                <i class="fas fa-phone"></i>
+                <p>tel. 881 493 533</p>
+                <p>tel2. 504 275 611</p>
+            </div>
+            <div class="contact__icon">
+                <i class="fas fa-clock"></i>
+                <p>PN-PT: 9:00 - 18:00</p>
+                <p>Sobota: 9:00 - 17:00</p>
+                <p>Niedziela: ZAMKNIĘTE</p>
+            </div>
+        </div>
+        <div class="contact__form">
+            <p>Możesz się z nami skontaktować drogą meilową poprzez pocztę elektroniczną lub bezpośrednio z naszej strony, a także dzwoniąc do nas.</p>
+            <form action="https://formsubmit.co/skolakmichal1@gmail.com" method="post" class="form" novalidate>
+                <input type="hidden" name="_next" value="http://localhost:3000"/>
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="email" placeholder="Adres e-mail" name="email" class="form__input"/>
+                <p class="form__paragraph-email"></p>
+                <textarea placeholder="Wiadomość" name="message" class="form__textarea"></textarea>
+                <p class="form__paragraph-text"></p>
+                <button class="contact__button button">Wyślij</button>
+            </form>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>Copyright 2021 Car-serwis. Created by Michał Skolak. All rights reserved.</p>
+    </footer>
     <script src="js/app.js" defer></script>
 </body>
 </html>
