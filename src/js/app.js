@@ -1,5 +1,5 @@
 'use strict';
-const button = document.querySelector('.header__hamburger');
+const hamburgerButton = document.querySelector('.header__hamburger');
 const listLinks = document.querySelectorAll('.header__link');
 
 const toggleMenu = () => {
@@ -11,5 +11,5 @@ const toggleMenu = () => {
   body.classList.toggle('body-overflow');
 };
 
-button.addEventListener('click', toggleMenu);
+hamburgerButton.addEventListener('click', toggleMenu);
 listLinks.forEach((listLink) => listLink.addEventListener('click', toggleMenu));
