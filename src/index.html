@@ -7,41 +7,43 @@
     <link rel="stylesheet" href="../dist/css/main.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="header__navigation">
-            <div class="header__logo">
-                <img src="images/logo.png" alt="logo"/>
-                <h1><span>car</span>serwis</h1>
+    <header class="header" id="home">
+        <div class="header__home">
+            <nav class="header__navigation">
+                <div class="header__logo">
+                    <img src="images/logo.png" alt="logo">
+                    <h1><span>car</span>serwis</h1>
+                </div>
+                <div class="header__menu-off header__menu">
+                    <ul class="header__list">
+                        <li>
+                            <a class="header__link" href="#home">HOME</a>
+                        </li>
+                        <li>
+                            <a class="header__link" href="#about-us">O NAS</a>
+                        </li>
+                        <li>
+                            <a class="header__link" href="#services">USŁUGI</a>
+                        </li>
+                        <li>
+                            <a class="header__link" href="#contact">KONTAKT</a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="header__hamburger" name="hamburger">
+                    <span class="header__line"></span>
+                </button>
+            </nav>
+            <div class="header__hero">
+                <h1 class="header__title">Witamy na naszej stronie</h1>
+                <p class="header__paragraph">Na tej stronie dowiesz się wszytkiego o warsztacie samochodowym Car-serwis w Koprzywnicy. Znajdziesz tutaj dokładną lokalizacje warsztatu, facebook, jak powstała firma oraz co najważniejsze jakie usługi oferujemy dla naszych klientów.</p>
+                <a href="#about-us">
+                    <button class="header__button button">Czytaj więcej</button>
+                </a>
             </div>
-            <div class="header__menu-off header__menu">
-                <ul class="header__list">
-                    <a class="header__link" href="#">
-                        <li>HOME</li>
-                    </a>
-                    <a class="header__link" href="#">
-                        <li>O NAS</li>
-                    </a>
-                    <a class="header__link" href="#">
-                        <li>USŁUGI</li>
-                    </a>
-                    <a class="header__link" href="#">
-                        <li>KONTAKT</li>
-                    </a>
-                </ul>
-            </div>
-            <button class="header__hamburger" name="hamburger">
-                <span class="header__line"></span>
-            </button>
-        </nav>
-        <div class="header__hero">
-            <h1 class="header__title">Witamy na naszej stronie</h1>
-            <p class="header__paragraph">Na tej stronie dowiesz się wszytkiego o warsztacie samochodowym Car-serwis w Koprzywnicy. Znajdziesz tutaj dokładną lokalizacje warsztatu, facebook, jak powstała firma oraz co najważniejsze jakie usługi oferujemy dla naszych klientów.</p>
-            <a href="#">
-                <button class="header__button button" name="button">Czytaj więcej</button>
-            </a>
         </div>
     </header>
-    <section class="about">
+    <section class="about" id="about-us">
         <div class="about__icons">
             <div class="about__icon">
                 <img src="images/icon-car.png" alt="">
@@ -64,49 +66,51 @@
                 <p>Wymiany oleju</p>
             </div>
         </div>
-        <div class="about__text">
-            <div>
+        <div class="about__content">
+            <div class="about__text">
                 <h2>O naszej firmie ...</h2>
                 <p>Firma Car-serwis powstała w 2019 roku jako warsztat samochodowy na ulicy Sportowa 16 w miejscowości Koprzywnica w województwie Świętokrzyskim. Sam warsztat jest nadal modyfikowany i modernizowany by osiągnąć w nim jak największą kulturę pracy. Nasz warsztat odwiedziło już dzięsiatki zadowolonych klientów, którzy mieli problem z samochodem, lecz został on szybko naprawiony przez naszych mechaników. Warsztat funkcjonuje już od ponad półtora roku i cały czas jest odwiedzany przez klinetów. Na tej stronie dowiesz się o dokładnej lokalizacji warsztatu, o social mediach oraz o wszytkich nięzbędnych informacjach dotyczących naszej firmy.</p>
-                <a href="#">
+                <a href="https://www.facebook.com/carserwis1">
                     <button class="about__button button">Więcej informacji</button>
                 </a>
             </div>
-            <div>
+            <div class="about__image">
                 <img src="images/aboutus.jpg" alt="">
             </div>
         </div>
     </section>
-    <section class="services">
-        <div class="services__icon">
-            <img src="images/icon-cpu.png" alt="">
-            <h2>CPU DIAGNOSTICS</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dicta earum aliquam</p>
-        </div>
-        <div class="services__icon">
-            <img src="images/icon-suspension.png" alt="">
-            <h2>SUSPENSION</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dicta earum aliquam</p>
-        </div>
-        <div class="services__icon">
-            <img src="images/icon-engine.png" alt="">
-            <h2>ENGINE</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dicta earum aliquam</p>
-        </div>
-        <div class="services__icon">
-            <img src="images/icon-brake.png" alt="">
-            <h2>BRAKES</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dicta earum aliquam</p>
-        </div>
-        <div class="services__icon">
-            <img src="images/icon-steering.png" alt="">
-            <h2>STEERING</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dicta earum aliquam</p>
-        </div>
-        <div class="services__icon">
-            <img src="images/icon-exhaust.png" alt="">
-            <h2>EXHAUST SYSTEM</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dicta earum aliquam</p>
+    <section class="services" id="services">
+        <div class="services__icons">
+            <div class="services__icon">
+                <img src="images/icon-cpu.png" alt="">
+                <h2>CPU DIAGNOSTICS</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dicta earum aliquam</p>
+            </div>
+            <div class="services__icon">
+                <img src="images/icon-suspension.png" alt="">
+                <h2>SUSPENSION</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dicta earum aliquam</p>
+            </div>
+            <div class="services__icon">
+                <img src="images/icon-engine.png" alt="">
+                <h2>ENGINE</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dicta earum aliquam</p>
+            </div>
+            <div class="services__icon">
+                <img src="images/icon-brake.png" alt="">
+                <h2>BRAKES</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dicta earum aliquam</p>
+            </div>
+            <div class="services__icon">
+                <img src="images/icon-steering.png" alt="">
+                <h2>STEERING</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dicta earum aliquam</p>
+            </div>
+            <div class="services__icon">
+                <img src="images/icon-exhaust.png" alt="">
+                <h2>EXHAUST SYSTEM</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas dicta earum aliquam</p>
+            </div>
         </div>
     </section>
     <section class="contact" id="contact">
@@ -130,20 +134,29 @@
             </div>
         </div>
         <div class="contact__form">
-            <p>Możesz się z nami skontaktować drogą meilową poprzez pocztę elektroniczną lub bezpośrednio z naszej strony, a także dzwoniąc do nas.</p>
-            <form action="https://formsubmit.co/skolakmichal1@gmail.com" method="post" class="form" novalidate>
-                <input type="hidden" name="_next" value="http://localhost:3000"/>
-                <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="email" placeholder="Adres e-mail" name="email" class="form__input"/>
+            <div>
+                <p>Możesz się z nami skontaktować drogą meilową poprzez pocztę elektroniczną lub bezpośrednio z naszej strony, a także dzwoniąc do nas.</p>
+                <p class="contact__paragraph"><i class="fas fa-envelope"></i>car_serwis1@outlook.com</p>
+            </div>
+            <form action="https://formsubmit.co/skolakmichal1@gmail.com" method="post" class="form">
+                <input type="hidden" name="_next" value="http://localhost:3000">
+                <input type="hidden" name="_template" value="table" >
+                <input type="hidden" name="_captcha" value="false" >
+                <input type="email" placeholder="Adres e-mail" name="email" required class="form__input">
                 <p class="form__paragraph-email"></p>
-                <textarea placeholder="Wiadomość" name="message" class="form__textarea"></textarea>
+                <textarea placeholder="Wiadomość" name="message" required class="form__textarea"></textarea>
                 <p class="form__paragraph-text"></p>
                 <button class="contact__button button">Wyślij</button>
             </form>
         </div>
     </section>
     <footer class="footer">
+        <a href="https://www.facebook.com/carserwis1" target="_blank">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="mailto:car_serwis1@outlook.com">
+            <i class="fas fa-envelope"></i>
+        </a>
         <p>Copyright 2021 Car-serwis. Created by Michał Skolak. All rights reserved.</p>
     </footer>
     <script src="js/app.js" defer></script>

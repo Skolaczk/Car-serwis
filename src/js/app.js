@@ -24,10 +24,10 @@ const checkEmail = () => {
   const reg =
     /^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$/;
   if (!reg.test(formInput.value)) {
-    formEmailMessage.innerHTML = 'E-mail jest niepoprawny';
+    formEmailMessage.textContent = 'E-mail jest niepoprawny';
     formInput.classList.add('form-active');
   } else {
-    formEmailMessage.innerHTML = '';
+    formEmailMessage.textContent = '';
     formInput.classList.remove('form-active');
   }
 };
@@ -36,10 +36,10 @@ formInput.addEventListener('input', checkEmail);
 
 const checkMessage = () => {
   if (formTextarea.value.length < 1) {
-    formTextMessage.innerHTML = 'Wiadomość nie może być pusta';
+    formTextMessage.textContent = 'Wiadomość nie może być pusta';
     formTextarea.classList.add('form-active');
   } else {
-    formTextMessage.innerHTML = '';
+    formTextMessage.textContent = '';
     formTextarea.classList.remove('form-active');
   }
 };
@@ -60,3 +60,22 @@ const checkForm = (e) => {
 };
 
 form.addEventListener('submit', checkForm);
+
+const changeButtonColor = () => {
+  const hamburgerLine = document.querySelector('.header__line');
+  if (window.scrollY >= window.innerHeight) {
+    hamburgerLine.classList.add('header__line-gray');
+  } else {
+    hamburgerLine.classList.remove('header__line-gray');
+  }
+};
+
+window.addEventListener('scroll', changeButtonColor);
+
+const media = window.matchMedia('(min-width: 768px)');
+
+if (media.matches) {
+  listLinks.forEach((listLink) =>
+    listLink.removeEventListener('click', toggleMenu)
+  );
+}

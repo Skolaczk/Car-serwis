@@ -8,6 +8,7 @@
 
 .header{
     background: url('../images/hero.jpg') no-repeat;
+    background-size: cover;
     height: 100vh;
     color: $white;
     padding: 20px 15px;
@@ -34,6 +35,15 @@
     height: 30px;
     background-color: transparent;
     border: none;
+    position: fixed;
+    right: 15px;
+    z-index: 3;
+}
+
+.header__line-gray, 
+.header__line-gray::before, 
+.header__line-gray::after{
+    background-color: $light-gray !important;
 }
 
 .header__line, 
@@ -62,7 +72,7 @@
 }
 
 .header__line-active{
-    background-color: transparent;
+    background-color: transparent !important;
 }
 
 .header__line-active::before{
@@ -74,7 +84,7 @@
 }
 
 .header__menu{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
@@ -82,6 +92,7 @@
     background-color: $dark-gray;
     opacity: 0;
     animation: toggleMenu .5s ease-in-out forwards;
+    z-index: 2;
     @include flex(center, center);
 
     ul{
@@ -90,8 +101,9 @@
     }
 
     li{
-        margin: 20px 0;
+        margin: 30px 0;
         font-size: 20px;
+        font-weight: 700;
     }
 
     a{
@@ -130,6 +142,11 @@
     cursor: pointer;
 }
 
+.about{
+    max-width: 1200px;
+    margin: 25px auto;
+}
+
 .about__icons{
     @include flex(center, center);
     flex-wrap: wrap;
@@ -149,11 +166,11 @@
     }
 
     p{
-        color: $light-gray;
+        color: $gray;
     }
 }
 
-.about__text{
+.about__content{
     padding: 0 15px;
 
     h2{
@@ -173,27 +190,34 @@
     }
 
     p{
-        margin: 15px 0 10px;
+        margin: 15px 0 15px;
     }
 
     img{
         width: 100%;
-        margin-top: 10px;
+        margin-top: 25px;
     }
 }
 
 .services{
+    width: 100%;
+    background-color: $dark-gray;
+    margin-top: 25px;
+}
+
+.services__icons{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     max-width: 1200px;
     background-color: $dark-gray;
     margin: 25px 0;
+    margin: 0 auto;
 }
 
 .services__icon{
     text-align: center;
     color: $white;
-    padding: 15px;
+    padding: 25px;
 
     h2{
         margin: 5px 0;
@@ -201,6 +225,10 @@
 
     img{
         height: 120px;
+    }
+
+    p{
+        color:$light-gray;
     }
 }
 
@@ -222,7 +250,7 @@
     i{
         font-size: 50px;
         color: $red;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
 
     p{
@@ -242,9 +270,12 @@
 
 .contact{
     padding: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
 
     form{
         margin: 10px 0;
+        text-align: right;
     }
 
     p{
@@ -286,12 +317,28 @@
     margin-bottom: 5px;
 }
 
+.contact__paragraph{
+    margin: 10px 0 15px;
+    @include flex(flex-start, center);
+
+    i{
+        color: $red;
+        margin-right: 5px;
+    }
+}
+
 .footer{
     background-color: $dark-gray;
     color: $light-gray;
     text-align: center;
     padding: 10px;
     font-size: 14px;
+
+    a{
+        color: $white;
+        font-size: 20px;
+        margin: 0 5px;
+    }
 }
 
 @keyframes toggleMenu {
@@ -299,5 +346,167 @@
         opacity: 0;
     }to{
         opacity: 1;
+    }
+}
+
+@include mq(530px){
+    .contact__icons{
+        @include flex(space-evenly, flex-start);
+    }
+
+    .contact__icon{
+        width: auto;
+        &::after{
+            display: none;
+        }
+    }
+}
+
+@include mq(768px){
+    .header__hamburger{
+        display: none;
+    }
+
+    .header__menu{
+        display: block;
+        animation: none;
+        opacity: 1;
+        height: auto;
+        background-color: transparent;
+        position: inherit;
+    }
+
+    .header__list{
+        @include flex(flex-end,center);
+
+        li{
+            margin: 0 0 0 10px;
+            font-size: 16px;
+            position: relative;
+            padding: 0 10px;
+
+            &::after{
+                width: 100%;
+                height: 3px;
+                background-color: $red;
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                opacity: 0;
+                transition: opacity .2s ease-in-out;
+            }
+
+            &:hover::after{
+                opacity: 1;
+            }
+        }        
+    }
+
+    .header__hero{
+        padding: 50px;
+    }
+
+    .about__icons{
+        @include flex(space-evenly, center);
+    }
+
+    .about__content{
+        @include flex(center, flex-start);
+        font-size: 18px;
+
+        h2:after{
+            width: 300px;
+        }
+    }
+
+    .about__text, .about__image{
+        padding: 10px;
+        width: 50%;
+    }
+
+    .contact__form{
+        @include flex(center, flex-start);
+
+        div, form{
+            width: 50%;
+        }
+    }
+
+    .contact__icons{
+        margin: 25px 0;
+    }
+}
+
+@include mq(1000px){
+    .header{
+        height: 794px;
+    }
+
+    .header__hero{
+        height: calc(100% - 100px);
+        padding: 200px;
+    }
+
+    .about__icons{
+        margin-top: 25px;
+    }
+
+    .services__icons{
+        grid-template-columns: repeat(auto-fit, minmax(333px, 1fr));
+    }
+
+    .services__icon{
+        padding: 50px;
+    }
+
+    .contact{
+        input{
+            height: 45px;
+        }
+
+        textarea{
+            height: 200px;
+        }
+    }
+
+    .contact__paragraph{
+        margin-top: 20px;
+    }
+
+    .about__content{
+        padding: 0;
+        margin: 25px 0;
+        @include flex(center, flex-start);
+        font-size: 18px;
+
+        h2:after{
+            width: 300px;
+        }
+
+        div{
+            padding: 10px;
+        }
+    }
+
+    .about__text{
+        width: 64%;
+    }
+
+    .about__image{
+        width: 36%;
+        text-align: right;
+        img{
+            height: 350px;
+            width: auto;
+        }
+    }
+}
+
+@include mq(1300px){
+    .header__home{
+        width: 1300px;
+        margin: 0 auto;
+        height: 100%;
     }
 }

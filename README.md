@@ -1,10 +1,10 @@
-## This is example website
+## This is website of car-serwis
 
 dist folder is ready for deploy and src folder is workinig.
 
-live: [Markdown Live Preview](https://markdownlivepreview.com/)
+live: [car-serwis](https://car-serwis.com/)
 
-code: [Markdown Live Preview](https://markdownlivepreview.com/)
+code: [github](https://github.com/Skolaczk/Car-serwis)
 
 Installation:
 ```
